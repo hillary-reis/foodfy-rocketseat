@@ -8,18 +8,22 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: white;
 }
 
 header {
   padding-left: 231px;
   margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 header img {
   padding-right: 122px;
 }
 
-header a {
+header a+a {
   font-size: 16px;
   color: #111111;
   text-decoration: none;
@@ -30,8 +34,7 @@ header a {
   background-color: #FBDFDB;
   max-width: 940px;
   max-height: 366px;
-  margin-top: 36px;
-  margin-left: 230px;
+  margin: 36px auto;
   border-radius: 30px;
   display: flex;
 }
@@ -44,7 +47,8 @@ header a {
 
 .box-text h2 {
   font-family: 'Roboto-blond';
-  font-style: 32px;
+  font-size: 32px;
+  line-height: 42px;
   color: #111111;
 }
 
@@ -57,41 +61,45 @@ header a {
 }
 
 .box-img {
-  padding-left: 248px;
+  max-width: 216px;
+  max-height: 300px;
+  padding: 66px 100px 0 248px;
 }
 
 #acess h2 {
   font-family: 'Roboto-Bold';
   font-size: 24px;
   color: #111111;
-  margin-left: 230px;
-  padding-top: 4.5%;
-  padding-bottom: 2%;
+  margin-left: 206px;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 #recipes {
-  margin-left: 230px;
-  max-width: 300px;
+  justify-content: center;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 300px 300px 300px;
   gap: 20px;
 }
 
 .recipe {
   margin-bottom: 30px;
-
 }
 
 .recipe .recipe-img img {
   border-radius: 15px;
   max-width: 300px;
-  max-height: 140px;
+}
+
+.recipe .description {
+  margin-top: 20px;
 }
 
 .recipe .description h3 {
   font-family: 'Roboto-Regular';
   font-size: 18px;
   color: #111111;
+  margin-bottom: 5px;
 }
 
 .recipe .description p {
@@ -104,7 +112,7 @@ footer {
   background-color: #eeeeee;
   text-align: center;
   padding: 25px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 footer p {
@@ -114,12 +122,11 @@ footer p {
 }
 
 
-/* ABOUT */
 
+/*== ABOUT ==*/
 
 .texts {
-  margin-top: 50px;
-  margin-left: 230px;
+  margin: 50px 0 50px 230px;
   max-width: 940px;
 }
 
@@ -128,6 +135,10 @@ footer p {
   font-size: 24px;
   color: #111111;
   margin-bottom: 20px;
+}
+
+.text p+p {
+  margin-top: 30px;
 }
 
 .text p {
@@ -145,18 +156,20 @@ footer p {
   margin-bottom: 20px;
 }
 
+
+/*== RECEITAS ==*/
+
 #recipess {
   margin-top: 50px;
-  margin-left: 230px;
-  max-width: 300px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 300px 300px 300px;
   gap: 20px;
+  justify-content: center;
 }
 
 
-/*  MODAL  */
 
+/*== MODAL ==*/
 
 #modal-overlay {
   background-color: rgba(0, 0, 0, 0.6);
@@ -172,7 +185,7 @@ footer p {
   background-color: #ffffff;
   width: 660px;
   height: 413px;
-  margin: 5vh auto;
+  margin: 12vh auto;
   padding: 30px;
   border-radius: 16px;
   position: relative;
@@ -198,9 +211,13 @@ footer p {
   cursor: pointer;
 }
 
+a.close-modal:hover {
+  color: #747272;
+}
 
-/*  MODAL ACTIVE  */
 
+
+/*== MODAL ACTIVE ==*/
 
 #modal-overlay.active {
   opacity: 1;
