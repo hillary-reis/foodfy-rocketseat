@@ -1,0 +1,32 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+  <title> Sobre - Foodfy </title>
+{% endblock %}
+
+{% block header %}
+  <a href="/about"><strong> Sobre </strong></a>
+  <a href="/recipes"> Receitas </a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="texts">
+
+    {% for item in items %}
+
+      <div class="text">
+    
+        {{ item.title }}
+
+        <p> {{ item.text1 }} </p>
+
+        <p> {{ item.text2 }} </p>
+
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+{% endblock %}

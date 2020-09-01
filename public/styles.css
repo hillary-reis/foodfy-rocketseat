@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+}
+
+header {
+  padding-left: 231px;
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Roboto-Regular';
+}
+
+header img {
+  padding-right: 122px;
+}
+
+header a+a {
+  font-size: 16px;
+  color: #111111;
+  text-decoration: none;
+  padding-right: 30px;
+}
+
+.box {
+  background-color: #FBDFDB;
+  max-width: 940px;
+  max-height: 366px;
+  margin: 36px auto;
+  border-radius: 30px;
+  display: flex;
+}
+
+.box .box-text {
+  max-width: 316px;
+  max-height: 84px;
+  padding: 117px 0 117px 60px;
+}
+
+.box-text h2 {
+  font-family: 'Roboto-blond';
+  font-size: 32px;
+  line-height: 42px;
+  color: #111111;
+}
+
+.box-text p {
+  font-family: 'Roboto-regular';
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  opacity: 0.7;
+}
+
+.box-img {
+  max-width: 216px;
+  max-height: 300px;
+  padding: 66px 100px 0 248px;
+}
+
+#acess h2 {
+  font-family: 'Roboto-Bold';
+  font-size: 24px;
+  color: #111111;
+  margin-left: 206px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+#recipes {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  gap: 20px;
+}
+
+.recipe {
+  margin-bottom: 30px;
+}
+
+.recipe .recipe-img img {
+  border-radius: 15px;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.recipe .description {
+  margin-top: 20px;
+}
+
+.recipe .description h3 {
+  font-family: 'Roboto-Regular';
+  font-size: 18px;
+  color: #111111;
+  margin-bottom: 5px;
+}
+
+.recipe .description p {
+  font-family: 'Roboto-Regular';
+  font-size: 14px;
+  color: #777777;
+}
+
+footer {
+  background-color: #eeeeee;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+footer p {
+  color: #999999;
+  font-size: 14px;
+  font-family: 'Roboto-Regular';
+}
+
+
+
+/*== ABOUT ==*/
+
+.texts {
+  margin: 50px 0 50px 230px;
+  max-width: 940px;
+}
+
+.text h2 {
+  font-family: 'Roboto-Bold';
+  font-size: 24px;
+  color: #111111;
+  margin-bottom: 20px;
+}
+
+.text p+p {
+  margin-top: 30px;
+}
+
+.text p {
+  font-family: 'Roboto-Regular';
+  font-size: 18px;
+  line-height: 28px;
+  color: #444444;
+}
+
+.text h3 {
+  font-family: 'Roboto-Bold';
+  font-size: 20px;
+  color: #111111;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+
+/*== RECEITAS ==*/
+
+#recipess {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+
+/*== MODAL ==*/
+
+#modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modals {
+  background-color: #ffffff;
+  width: 660px;
+  height: 413px;
+  margin: 12vh auto;
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+  text-align: center;
+}
+
+.modals .modal-img img {
+  border-radius: 15px;
+  width: 650px;
+  height: 250px;
+}
+
+.modals .modal-description {
+  padding-top: 20px;
+  margin-bottom: 60px;
+  font-family: 'Roboto-Regular';
+}
+
+.close-modal {
+  font-family: 'Roboto-Regular';
+  font-size: 16px;
+  color: #999999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.close-modal:hover {
+  color: #747272;
+}
+
+
+
+/*== MODAL ACTIVE ==*/
+
+#modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/*== RECIPE ==*/
+
+.image {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.image img {
+  border-radius: 15px;
+  max-width: 940px;
+  max-height: 280px;
+}
+
+.recipe-title {
+  text-align: center;
+}
+
+.recipe-title h2 {
+  font-family: 'Roboto-Bold';
+  color: #111111;
+  font-size: 36px;
+  margin-bottom: 4px;
+}
+
+.recipe-title p {
+  font-family: 'Roboto-Regular';
+  color: #777777;
+  font-size: 20px;
+}
+
+.ingredients {
+  max-width: 940px;
+  max-height: 383px;
+  margin: 50px auto;
+}
+
+.ingredients .title, .preparation .title, .information .title {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.ingredients .title h3, .preparation .title h3, .information .title h3 {
+  font-family: 'Roboto-Bold';
+  color: #111111;
+  font-size: 24px;
+  margin-right: 2px;
+}
+
+.ingredients .title button, .preparation .title button, .information .title button {
+  font-family: 'Roboto-Bold';
+  color: #999999;
+  font-size: 12px;
+  text-decoration: none;
+  background-color: white;
+  padding: 2px 6px;
+}
+
+.ingredients .title button:hover, .preparation .title button:hover, .information .title button:hover {
+  background-color: #999999;
+  color: white;
+  border-radius: 15px;
+  transition: 300ms;
+}
+
+.ingredients ul, .preparation ul {
+  font-family: 'Roboto-Regular';
+  color: #444444;
+  line-height: 28px;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+.preparation {
+  max-width: 940px;
+  max-height: 243px;
+  margin: 0 auto;
+}
+
+.information {
+  max-width: 940px;
+  max-height: 235px;
+  margin: 50px auto;
+}
+
+.information p.text {
+  font-family: 'Roboto-Regular';
+  color: #444444;
+  line-height: 28px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.information > p.text {
+  margin-top: 20px;
+}
+
+
+
+/*== ERROR ==*/
+
+a.error {
+  text-decoration: none;
+  color: #000000;
+}
+
+a.error:hover {
+  color: #999999;
+  border-bottom: 1px solid #747272;
+  transition: 200ms;
+}
+
+footer.error {
+  margin-top: 170px;
+}

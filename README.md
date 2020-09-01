@@ -1,2 +1,2 @@
 # foodfy-rocketseat
-Projeto de desenvolvimento do curso Launchbase da Rocketseat
+Projeto de desenvolvimento de um site para um restarante do curso Launchbase da Rocketseat.

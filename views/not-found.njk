@@ -1,0 +1,32 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+  <title> Error - Not found </title>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="box">
+    <div class="box-text">
+      <h2> Error 404 </h2>
+      <p>
+        Infelizmente a página que você buscou, não existe. Verifique se sua busca está correta ou
+        <a href="/" class="error">clique aqui </a>.
+      </p>
+    </div>
+
+    <div class="box-img">
+      <img src="/images/chef.png" alt="Chefe gordinho com prato na mão">
+    </div>
+  </div>
+     
+{% endblock %}
+
+{% block footer %}
+
+  <footer class="error">
+    <p> Todos direitos reservados, receitas Foodfy. </p>
+  </footer>
+
+{% endblock %}
