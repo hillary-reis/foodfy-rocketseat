@@ -15,17 +15,23 @@ routes.get ('/', function (req, res) {
   };
   
   return res.render ('index', {items: recipes, index });
-});
+}); // página inicial (index)
 
 routes.get ('/about', function (req, res) {
   return res.render ('about', {items: about} );
-});
+}); // sobre (about)
 
-routes.get ('/recipes', function (req, res) {
+routes.get ('/admin/recipes', function (req, res) {
   return res.render ('recipes', {items: recipes });
-});
+}); // monstrar a lista de receitas (recipes)
 
-routes.get ('/recipes/:index', function (req, res) {
+routes.get ('/admin/recipes/create', function (req, res) {
+
+  return res.send ('formulário de criação de uma receita');
+
+}); // mostrar formulário de criação (create)
+
+routes.get ('/admin/recipes/:index', function (req, res) {
   const recipes = db;
   const recipeIndex = req.params.index;
 
@@ -41,6 +47,13 @@ routes.get ('/recipes/:index', function (req, res) {
 
   return res.render ('recipe', { item: recipe });
 
-});
+}); // exibir detalhes de uma receita (show)
+
+routes.get ('/admin/recipes/:index/edit', function (req, res) {
+  
+  return res.send ('formulário de edição da receita');
+
+}); // mostrar formulário de edição de receita (edit)
+
 
 module.exports = routes;
