@@ -68,7 +68,8 @@ header a+a {
 }
 
 #acess h2 {
-  font-family: 'Roboto-Bold';
+  font-family: Roboto;
+  font-weight: 700;
   font-size: 24px;
   color: #111111;
   margin-left: 206px;
@@ -133,7 +134,8 @@ footer p {
 }
 
 .text h2 {
-  font-family: 'Roboto-Bold';
+  font-family: Roboto;
+  font-weight: 700;
   font-size: 24px;
   color: #111111;
   margin-bottom: 20px;
@@ -151,7 +153,8 @@ footer p {
 }
 
 .text h3 {
-  font-family: 'Roboto-Bold';
+  font-family: Roboto;
+  font-weight: 700;
   font-size: 20px;
   color: #111111;
   margin-top: 30px;
@@ -247,7 +250,8 @@ a.close-modal:hover {
 }
 
 .recipe-title h2 {
-  font-family: 'Roboto-Bold';
+  font-family: Roboto;
+  font-weight: 700;
   color: #111111;
   font-size: 36px;
   margin-bottom: 4px;
@@ -272,14 +276,16 @@ a.close-modal:hover {
 }
 
 .ingredients .title h3, .preparation .title h3, .information .title h3 {
-  font-family: 'Roboto-Bold';
+  font-family: Roboto;
+  font-weight: 700;
   color: #111111;
   font-size: 24px;
   margin-right: 2px;
 }
 
 .ingredients .title button, .preparation .title button, .information .title button {
-  font-family: 'Roboto-Bold';
+  font-family: Roboto;
+  font-weight: 700;
   color: #999999;
   font-size: 12px;
   text-decoration: none;
@@ -343,4 +349,92 @@ a.error:hover {
 
 footer.error {
   margin-top: 170px;
+}
+
+
+
+
+/*== NOVO HEADER ==*/
+
+header.new {
+  background-color: #111111;
+  margin-top: 0;
+  padding: 27px 1078px 26px 231px;
+}
+
+
+
+/*== FORM - CREATE ==*/
+
+.form {
+  width: 940px;
+  margin: 55px 230px;
+}
+
+.form .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form .header h3 {
+  font: 700 24px Roboto;
+}
+
+.form .header button[type="submit"] {
+  background-color: #6558C3;
+  border-radius: 4px;
+  font: 700 16px Roboto;
+  color: #ffffff;
+  padding: 9px 20px;
+}
+
+.form .item div:first-child {
+  font: 700 16px Roboto;
+  color: #111111;
+  margin-top: 30px;
+}
+
+.form .item input {
+  width: 100%;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.form .item input::placeholder, .form .item textarea {
+  font: normal 16px Roboto;
+}
+
+.form .item textarea {
+  background-color: #ffffff;
+  color: #444444;
+  font-size: 16px;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  resize: none;
+  margin-top: 10px;
+}
+
+.form .item textarea::placeholder {
+  padding: 8px;
+}
+
+.form button.newIngradient, .form button.newStep {
+  color: #6558C3;
+  font: 700 16px Roboto;
+  margin-top: 15px;
+  text-decoration: none;
+  background-color: white;
+}
+
+.form button.newIngradient:hover, .form button.newStep:hover {
+  cursor: pointer;
+  color: #5546c7;
 }

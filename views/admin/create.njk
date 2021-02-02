@@ -1,0 +1,57 @@
+{% extends 'new-layout.njk' %}
+
+{% block head %}
+  <title> Foodfy || nova receita </title>
+{% endblock %}
+
+{% block content %}
+
+  <form class="form" method="POST" action="/admin/recipes">
+
+    <div class="header">
+      <h3>Criando receita</h3>
+      <button type="submit">Salvar receita</button>
+    </div>
+
+    <div class="item">
+      <div>Imagem da receita</div>
+      <div>
+        <input type="url" name="recipe_url" placeholder="http://">
+      </div>
+    </div>
+
+    <div class="item">
+      <div>Nome da receita</div>
+      <div>
+        <input type="text" name="name" placeholder="Nome de exibição da receita">
+      </div>
+    </div>
+
+    <div class="item" id="ingredients">
+      <div>Ingredientes</div>
+      <div class="ingredient">
+        <input type="text" name="ingredients[]" placeholder="Ex: 1 xícara de farinha de trico">
+      </div>
+    </div>
+    <button type="button" class="newIngradient">Adicionar novo ingrediente</button>
+
+    <div class="item" id="preparations">
+      <div>Modo de preparo</div>
+      <div class="preparation">
+        <input type="text" name="preparations[]" placeholder="Descreva, detalhadamente o modo de preparo">
+      </div>
+    </div>
+    <button type="button" class="newStep">Adicionar novo passo</button>
+
+    <div class="item">
+      <div>Informações adicionais</div>
+      <div>
+        <textarea name="" cols="118" rows="10" placeholder="Informações ou dicas relacionadas a receita, medidas e/ou preparo"></textarea>
+      </div>
+    </div>
+
+  </form>
+
+  <script src="/scripts/scripts-create.js"></script>
+
+{% endblock %}

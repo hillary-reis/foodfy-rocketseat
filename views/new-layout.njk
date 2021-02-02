@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+  <head>
+
+    <meta charset="UTF-8">
+    <link href="/styles.css" rel="stylesheet">
+
+    {% block head %}
+      <title> Foodfy </title>
+    {% endblock %}
+
+  </head>
+
+  <body>
+    <header class="new">
+      <a href="/"><img src="/images/logo-novo.png" alt="Logo da Foodfy"></a>
+    </header>
+
+    {% block content %} {% endblock %}
+
+  </body>
+
+</html>

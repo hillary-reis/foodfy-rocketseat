@@ -22,12 +22,12 @@ routes.get ('/about', function (req, res) {
 }); // sobre (about)
 
 routes.get ('/admin/recipes', function (req, res) {
-  return res.render ('recipes', {items: recipes });
+  return res.render ('admin/recipes', {items: recipes });
 }); // monstrar a lista de receitas (recipes)
 
-routes.get ('/admin/recipes/create', function (req, res) {
+routes.get ('/admin/create', function (req, res) {
 
-  return res.send ('formulário de criação de uma receita');
+  return res.render ('admin/create');
 
 }); // mostrar formulário de criação (create)
 
@@ -55,5 +55,8 @@ routes.get ('/admin/recipes/:index/edit', function (req, res) {
 
 }); // mostrar formulário de edição de receita (edit)
 
+routes.post ('/admin/recipes', function (req, res) {
+  return res.send ('recebido');
+}); // cadastrar nova receita
 
 module.exports = routes;
