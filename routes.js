@@ -56,7 +56,16 @@ routes.get ('/admin/recipes/:index/edit', function (req, res) {
 }); // mostrar formulário de edição de receita (edit)
 
 routes.post ('/admin/recipes', function (req, res) {
-  return res.send ('recebido');
+
+  const keys = Object.keys(req.body);
+
+  for (key of keys) {
+    if (req.body[key] == "") {
+      return res.send ('Please, fill all fields');
+    };
+  };
+
+  return res.send (req.body);
 }); // cadastrar nova receita
 
 module.exports = routes;
