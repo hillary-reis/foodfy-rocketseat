@@ -6,7 +6,7 @@
 
 {% block content %}
 
-  <form class="form" method="POST" action="/admin/recipes">
+  <form class="form" method="POST" action="/admin/recipes?_method=PUT">
 
     <div class="header">
       <h3>Editando receita</h3>
@@ -41,6 +41,8 @@
         <textarea name="informations" cols="118" rows="10">{{ item.information }}</textarea>
       </div>
     </div>
+
+    <input type="hidden" name="id" value="{{item.id}}">
 
   </form>
 

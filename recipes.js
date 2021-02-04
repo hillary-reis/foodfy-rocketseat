@@ -2,7 +2,6 @@ const recipesData = require ('./data/data-recipes');
 const fs = require ('fs');
 const data = require ('./data.json');
 
-// página inicial
 exports.index = function (req, res) {
   const index = {
     h2: 'As melhores receitas',
@@ -21,7 +20,7 @@ exports.about = function (req, res) {
   return res.render ('about', {items: about} );
 };
 
-// monstrar a lista de receitas (recipes)
+// monstrar a lista de receitas
 exports.recipes = function (req, res) {
   return res.render ('recipes', {items: recipesData });
 };
@@ -42,7 +41,7 @@ exports.show = function (req, res) {
 
 };
 
-// mostrar formulário de criação (create)
+// mostrar formulário de criação
 exports.create = function (req, res) {
 
   return res.render ('admin/create');
@@ -76,11 +75,11 @@ exports.post = function (req, res) {
   fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
     if (err) return res.send ("Write file error!");
 
-    return res.redirect ('/recipes');
+    return res.redirect (`/recipes/${id}`);
   });
 };
 
-// mostrar formulário de edição de receita (edit)
+// mostrar formulário de edição de receita
 exports.edit = function (req, res) {
   const { id } = req.params;
 
@@ -93,4 +92,33 @@ exports.edit = function (req, res) {
   };
 
   return res.render ('admin/edit', { item: foundRecipe });
+};
+
+// salvar edição 
+exports.put = function (req, res) {
+  const { id } = req.body;
+  let index = 0;
+
+  const foundRecipe = data.recipes.find (function (recipe, FoundIndex) {
+    if (id == recipe.id) {
+      index = FoundIndex;
+
+      return true
+    };
+  });
+
+  if (!foundRecipe) return res.render ('not-found');
+
+  const recipe = {
+    ...foundRecipe,
+    ...req.body,
+  };
+
+  data.recipes[index] = recipe;
+
+  fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
+    if (err) return res.send ('Write error!');
+  });
+
+  return res.redirect (`/recipes/${id}`);
 };
