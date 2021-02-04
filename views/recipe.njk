@@ -16,12 +16,12 @@
   <div class="recipe">
 
     <div class="image">
-      <img src="{{ item.image }}" alt="{{ item.alt }}"> 
+      <img src="{{ item.recipe_url }}" alt="{{ item.name }}"> 
     </div>
 
     <div class="recipe-title">
-      <h2> {{ item.title }} </h2>
-      <p> {{ item.author }} </p>
+      <h2> {{ item.name }} </h2>
+      <p> por {{ item.author }} </p>
     </div>
 
     <div class="ingredients">
@@ -53,7 +53,7 @@
       <div class="content">
 
         <ul>
-          {% for preparation in item.preparation %}
+          {% for preparation in item.preparations %}
 
             <li> {{ preparation }} </li>
 

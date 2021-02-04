@@ -28,22 +28,30 @@ exports.recipes = function (req, res) {
 
 // exibir detalhes de uma receita
 exports.show = function (req, res) {
-  const db = require ('./data/data');
+/*   const db = require ('./data/data');
 
   const recipes = db;
   const recipeIndex = req.params.index;
 
   const recipe = recipes.find (function (recipe, index) {
-    // console.log (index, recipeIndex)
     return index == recipeIndex;
   });
-  // const recipe = recipes[recipeIndex];
 
-  if (!recipe) {
+   */
+
+
+  const { id } = req.params;
+
+  const foundRecipe = data.recipes.find (function (recipe) {
+    return recipe.id == id;
+  });
+
+  if (!foundRecipe) {
     return res.render ('not-found');
   };
 
-  return res.render ('recipe', { item: recipe });
+  return res.render ('recipe', { item: foundRecipe });
+
 };
 
 // mostrar formulário de criação (create)
@@ -63,7 +71,19 @@ exports.post = function (req, res) {
     };
   };
 
-  data.recipes.push(req.body);
+  const {recipe_url, name, author, ingredients, preparations, informations} = req.body;
+
+  const id = Number(data.recipes.length + 1);
+
+  data.recipes.push({
+    id,
+    recipe_url,
+    name,
+    author,
+    ingredients,
+    preparations,
+    informations
+  });
 
   fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
     if (err) return res.send ("Write file error!");
