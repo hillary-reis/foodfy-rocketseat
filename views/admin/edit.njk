@@ -15,6 +15,33 @@
 
     {% include 'admin/fields.njk' %}
 
+    <div class="item" id="ingredients">
+      <div>Ingredientes</div>
+      {% for ingredient in item.ingredients %}
+        <div class="ingredient">
+          <input type="text" name="ingredients[]" placeholder="Ex: 1 xícara de farinha de trico"  value="{{ ingredient }}">
+        </div>
+      {% endfor %}
+    </div>
+    <button type="button" class="newIngradient">Adicionar novo ingrediente</button>
+
+    <div class="item" id="preparations">
+      <div>Modo de preparo</div>
+      {% for preparation in item.preparations %}
+        <div class="preparation">
+          <input type="text" name="preparations[]" placeholder="Descreva, detalhadamente o modo de preparo"  value="{{ preparation }}" >
+        </div>
+      {% endfor %}
+    </div>
+    <button type="button" class="newStep">Adicionar novo passo</button>
+
+    <div class="item">
+      <div>Informações adicionais</div>
+      <div>
+        <textarea name="informations" cols="118" rows="10">{{ item.information }}</textarea>
+      </div>
+    </div>
+
   </form>
 
   <script src="/scripts/scripts-create.js"></script>

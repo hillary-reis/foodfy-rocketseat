@@ -59,7 +59,7 @@ exports.post = function (req, res) {
     };
   };
 
-  const {recipe_url, name, author, ingredients, preparations, informations} = req.body;
+  const {recipe_url, name, author, ingredients, preparations, information} = req.body;
 
   const id = Number(data.recipes.length + 1);
 
@@ -70,7 +70,7 @@ exports.post = function (req, res) {
     author,
     ingredients,
     preparations,
-    informations
+    information
   });
 
   fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
@@ -82,6 +82,15 @@ exports.post = function (req, res) {
 
 // mostrar formulário de edição de receita (edit)
 exports.edit = function (req, res) {
-  
-  return res.render ('admin/edit');
+  const { id } = req.params;
+
+  const foundRecipe = data.recipes.find (function (recipe) {
+    return recipe.id == id;
+  });
+
+  if (!foundRecipe) {
+    return res.render ('not-found');
+  };
+
+  return res.render ('admin/edit', { item: foundRecipe });
 };
