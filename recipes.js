@@ -28,18 +28,6 @@ exports.recipes = function (req, res) {
 
 // exibir detalhes de uma receita
 exports.show = function (req, res) {
-/*   const db = require ('./data/data');
-
-  const recipes = db;
-  const recipeIndex = req.params.index;
-
-  const recipe = recipes.find (function (recipe, index) {
-    return index == recipeIndex;
-  });
-
-   */
-
-
   const { id } = req.params;
 
   const foundRecipe = data.recipes.find (function (recipe) {
@@ -95,5 +83,5 @@ exports.post = function (req, res) {
 // mostrar formulário de edição de receita (edit)
 exports.edit = function (req, res) {
   
-  return res.send ('formulário de edição da receita');
+  return res.render ('admin/edit');
 };

@@ -88,6 +88,27 @@ header a+a {
   margin-bottom: 30px;
 }
 
+.recipe .edit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 55px 210px 0;
+}
+
+.recipe .edit h3 {
+  font: 700 24px 'Roboto';
+  color: #111111;
+}
+
+.recipe .edit a {
+  background-color: #6558C3;
+  color: #ffffff;
+  font: 700 16px 'Roboto';
+  text-decoration: none;
+  padding: 9px 20px;
+  border-radius: 4px;
+}
+
 .recipe .recipe-img img {
   border-radius: 15px;
   max-width: 300px;
