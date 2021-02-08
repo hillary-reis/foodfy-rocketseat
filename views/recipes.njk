@@ -16,19 +16,20 @@
 
   <section id="recipess">
 
-    {% for item in items %}
+    {% for item in items.recipes %}
 
       <div class="recipe" id="{{ item.id }}">
 
         <div class="recipe-img">
           
-            <img src="{{ item.img }}" alt="{{ item.alt }}">
+            <img src="{{ item.recipe_url }}" alt="{{ item.name }}">
           
         </div>
 
         <div class="description">
-          <h3> {{ item.description }} </h3>
-          <p> {{ item.name }} </p>
+          <h3> {{ item.name }} </h3>
+          <p> por {{ item.author }} </p>
+          <a href="/recipes/{{item.id}}">Visualizar</a>
         </div>
 
       </div>
@@ -36,7 +37,5 @@
     {% endfor %}
 
   </section>
-
-  <script src="/scripts/scripts-recipes.js"></script>
       
 {% endblock %}

@@ -22,7 +22,7 @@ exports.about = function (req, res) {
 
 // monstrar a lista de receitas
 exports.recipes = function (req, res) {
-  return res.render ('recipes', {items: recipesData });
+  return res.render ('recipes', {items: data });
 };
 
 // exibir detalhes de uma receita

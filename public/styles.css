@@ -120,14 +120,14 @@ header a+a {
 }
 
 .recipe .description h3 {
-  font-family: 'Roboto-Regular';
+  font-family: 'Roboto';
   font-size: 18px;
   color: #111111;
   margin-bottom: 5px;
 }
 
 .recipe .description p {
-  font-family: 'Roboto-Regular';
+  font-family: 'Roboto';
   font-size: 14px;
   color: #777777;
 }
@@ -136,7 +136,7 @@ footer {
   background-color: #eeeeee;
   text-align: center;
   padding: 25px;
-  margin-top: 30px;
+  margin-top: 200px;
 }
 
 footer p {
@@ -188,9 +188,35 @@ footer p {
 #recipess {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: 300px 300px 300px;
-  gap: 20px;
+  grid-template-columns: 500px 500px;
+  gap: 40px;
   justify-content: center;
+}
+
+#recipess .recipe {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+#recipess .recipe .recipe-img img {
+  width: 215px;
+  height: 80px;
+}
+
+#recipess .recipe .description {
+  margin-left: 20px;
+  margin-top: 0;
+}
+
+#recipess .recipe .description p {
+  margin-bottom: 10px;
+}
+
+#recipess .recipe .description a {
+  color: #6558C3;
+  font: 700 14px 'Roboto';
+  text-decoration: none;
 }
 
 
@@ -390,8 +416,13 @@ header.new {
 .content-edit {
   display: flex;
   width: 940px;
-  margin: 55px 230px;
+  margin: 55px 10px;
   justify-content: space-between;
+}
+
+.form {
+  width: 940px;
+  margin: 55px 230px;
 }
 
 .form .header {
@@ -462,7 +493,7 @@ header.new {
 
 .buttons {
   position: absolute;
-  left: 994px;
+  left: 960px;
   display: flex;
   align-items: flex-start;
 }
