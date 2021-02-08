@@ -6,45 +6,55 @@
 
 {% block content %}
 
-  <form class="form" method="POST" action="/admin/recipes?_method=PUT">
+  <div class="content-edit">
+    <form class="form" id="form" method="POST" action="/admin/recipes?_method=PUT">
 
-    <div class="header">
-      <h3>Editando receita</h3>
-      <button type="submit">Salvar receita</button>
-    </div>
-
-    {% include 'admin/fields.njk' %}
-
-    <div class="item" id="ingredients">
-      <div>Ingredientes</div>
-      {% for ingredient in item.ingredients %}
-        <div class="ingredient">
-          <input type="text" name="ingredients[]" placeholder="Ex: 1 xícara de farinha de trico"  value="{{ ingredient }}">
-        </div>
-      {% endfor %}
-    </div>
-    <button type="button" class="newIngradient">Adicionar novo ingrediente</button>
-
-    <div class="item" id="preparations">
-      <div>Modo de preparo</div>
-      {% for preparation in item.preparations %}
-        <div class="preparation">
-          <input type="text" name="preparations[]" placeholder="Descreva, detalhadamente o modo de preparo"  value="{{ preparation }}" >
-        </div>
-      {% endfor %}
-    </div>
-    <button type="button" class="newStep">Adicionar novo passo</button>
-
-    <div class="item">
-      <div>Informações adicionais</div>
-      <div>
-        <textarea name="informations" cols="118" rows="10">{{ item.information }}</textarea>
+      <div class="header">
+        <h3>Editando receita</h3>
       </div>
+
+      {% include 'admin/fields.njk' %}
+
+      <div class="item" id="ingredients">
+        <div>Ingredientes</div>
+        {% for ingredient in item.ingredients %}
+          <div class="ingredient">
+            <input type="text" name="ingredients[]" placeholder="Ex: 1 xícara de farinha de trico"  value="{{ ingredient }}">
+          </div>
+        {% endfor %}
+      </div>
+      <button type="button" class="newIngradient">Adicionar novo ingrediente</button>
+
+      <div class="item" id="preparations">
+        <div>Modo de preparo</div>
+        {% for preparation in item.preparations %}
+          <div class="preparation">
+            <input type="text" name="preparations[]" placeholder="Descreva, detalhadamente o modo de preparo"  value="{{ preparation }}" >
+          </div>
+        {% endfor %}
+      </div>
+      <button type="button" class="newStep">Adicionar novo passo</button>
+
+      <div class="item">
+        <div>Informações adicionais</div>
+        <div>
+          <textarea name="informations" cols="118" rows="10">{{ item.information }}</textarea>
+        </div>
+      </div>
+
+      <input type="hidden" name="id" value="{{item.id}}">
+
+    </form>
+
+    <div class="buttons">
+      <button type="submit" id="delete" form="form-delete">Deletar</button>
+      <button type="submit" id="save" form="form">Salvar receita</button>
     </div>
 
-    <input type="hidden" name="id" value="{{item.id}}">
-
-  </form>
+    <form id="form-delete" method="POST" action="/admin/recipes?_method=DELETE">
+      <input type="hidden" name="id" value="{{item.id}}">
+    </form>
+  </div>
 
   <script src="/scripts/scripts-create.js"></script>
 

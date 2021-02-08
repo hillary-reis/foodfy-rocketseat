@@ -387,9 +387,11 @@ header.new {
 
 /*== FORM - CREATE ==*/
 
-.form {
+.content-edit {
+  display: flex;
   width: 940px;
   margin: 55px 230px;
+  justify-content: space-between;
 }
 
 .form .header {
@@ -402,18 +404,14 @@ header.new {
   font: 700 24px Roboto;
 }
 
-.form .header button[type="submit"] {
-  background-color: #6558C3;
-  border-radius: 4px;
-  font: 700 16px Roboto;
-  color: #ffffff;
-  padding: 9px 20px;
-}
-
 .form .item div:first-child {
   font: 700 16px Roboto;
   color: #111111;
   margin-top: 30px;
+}
+
+.form .item .preparation {
+  max-width: none;
 }
 
 .form .item input {
@@ -442,6 +440,7 @@ header.new {
   border-radius: 4px;
   resize: none;
   margin-top: 10px;
+  max-width: none;
 }
 
 .form .item textarea::placeholder {
@@ -459,4 +458,24 @@ header.new {
 .form button.newIngradient:hover, .form button.newStep:hover {
   cursor: pointer;
   color: #5546c7;
+}
+
+.buttons {
+  position: absolute;
+  left: 994px;
+  display: flex;
+  align-items: flex-start;
+}
+
+button[type="submit"] {
+  background-color: #6558C3;
+  border-radius: 4px;
+  font: 700 16px Roboto;
+  color: #ffffff;
+  padding: 9px 20px;
+}
+
+button[type="submit"]#delete {
+  background-color: #DC4747;
+  margin-right: 10px;
 }
